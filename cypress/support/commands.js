@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('checkPdf', () => {
+    cy.contains('View Pdf').invoke('attr', 'target', '_self').click({ force: true })
+    cy.get('embed').should('be.visible')
+})

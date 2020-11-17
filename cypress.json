@@ -1,1 +1,6 @@
-{}
+{
+	"viewportWidth": 2880,
+	"viewportHeight": 1800,
+	"chromeWebSecurity": false,
+	"reporter": "mochawesome"
+}
