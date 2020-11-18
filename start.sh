@@ -1,7 +1,5 @@
 #STR_CHECK=$(ls)
-time docker run -it -v $PWD:/e2e -w /e2e --env-file .env cypress/included:5.6.0 
-#echo $STR_CHECK
-#--spec "cypress/integration/coolers_water/automatic.spec.js"
+docker run -it --ipc=host -v $PWD:/e2e -w /e2e --env-file .env cypress/included:5.6.0 --spec "cypress/integration/coolers_water/automatic.spec.js"
 #TOKEN=1059823581:AAFUlSWEuEubEP-2nCG6QMhR9qNopLpzQcM
 #CHAT_ID=334576789
 #MESSAGE="Problems in tests"

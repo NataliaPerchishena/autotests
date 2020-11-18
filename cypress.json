@@ -2,5 +2,10 @@
 	"viewportWidth": 2880,
 	"viewportHeight": 1800,
 	"chromeWebSecurity": false,
-	"reporter": "mochawesome"
+	"reporter": "mochawesome",
+	"reporterOptions":
+	{ 
+		"mochaFile": "cypress/results/results-[hash].xml",
+		"json": true
+	}
 }
