@@ -5,3 +5,4 @@ services:
     build: .
     volumes:
     - ./cypress/:/e2e/cypress
+    shm_size: '2gb'
