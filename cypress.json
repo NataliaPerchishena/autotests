@@ -2,5 +2,12 @@
 	"viewportWidth": 2880,
 	"viewportHeight": 1800,
 	"chromeWebSecurity": false,
-	"video": false
+	"video": false,
+	"reporter": "mochawesome",
+ 	"reporterOptions": {
+		"reportDir": "cypress/results",
+		"overwrite": false,
+		"html": true,
+		"json": true
+  	}
 }
