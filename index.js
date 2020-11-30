@@ -1,23 +1,19 @@
 const { merge } = require('mochawesome-merge')
 const request = require('request');
 const fs = require('fs');
+const path = require('path');
  
-// const environmentDir = './cypress/results';
+const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
 
-// fs.readdir(environmentDir, (err, files) => {
+console.log(resultsPath);
 
-//     files.forEach(file => {
-// 		request('https://api.telegram.org/bot436435344:AAGajvZeXrHI7deQFf5HsjDwAqlM9QBAOOo/sendMessage?chat_id=305267711&text=sdf');
-//     });
-// });
-
-let send_report = (message) => {
+const send_report = (message) => {
     request("https://api.telegram.org/bot436435344:AAGajvZeXrHI7deQFf5HsjDwAqlM9QBAOOo/sendMessage?chat_id=305267711&text=" + encodeURI(message));
 };
 
 const options = {
   files: [
-    './cypress/results/*.json',
+    resultsPath,
   ],
 }
 
