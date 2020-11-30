@@ -5,8 +5,6 @@ const path = require('path');
  
 const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
 
-console.log(resultsPath);
-
 const send_report = (message) => {
     request("https://api.telegram.org/bot436435344:AAGajvZeXrHI7deQFf5HsjDwAqlM9QBAOOo/sendMessage?chat_id=305267711&text=" + encodeURI(message));
 };
@@ -30,9 +28,10 @@ merge(options).then(report => {
             suite.tests.forEach(test => {
                 if (test.pass != true)
                 {
+                    
                     if (error_message !== "")
                         error_message += "\n";
-                    error_message += ("❌ " + result.file + test.err.message);
+                    error_message += "❌ " + result.file.split('integration/')[1];
                 } 
             });
         });
