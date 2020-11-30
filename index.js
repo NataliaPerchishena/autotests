@@ -2,11 +2,21 @@ const { merge } = require('mochawesome-merge')
 const request = require('request');
 const fs = require('fs');
 const path = require('path');
- 
+const dotenv = require('dotenv');
+
 const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
 
+dotenv.config();
+
 const send_report = (message) => {
-    request("https://api.telegram.org/bot436435344:AAGajvZeXrHI7deQFf5HsjDwAqlM9QBAOOo/sendMessage?chat_id=305267711&text=" + encodeURI(message));
+    let environment = process.env.ENVIRONMENT; 
+    let telegramBotUrl = process.env.TELEGRAM_BOT_URL;
+    let telegramChats = process.env.TELEGRAM_CHATS.split(';');
+
+    message = environment + "\n" + message;
+    telegramChats.forEach(chat => {
+        request(`${telegramBotUrl}/sendMessage?chat_id=${chat}&text=${encodeURI(message)}`);
+    });
 };
 
 const options = {
@@ -22,19 +32,19 @@ merge(options).then(report => {
         return ;
     }
 
-    let error_message = "";
+    let errorMessage = "";
     report.results.forEach(result => {
         result.suites.forEach(suite => {
             suite.tests.forEach(test => {
                 if (test.pass != true)
                 {
                     
-                    if (error_message !== "")
-                        error_message += "\n";
-                    error_message += "❌ " + result.file.split('integration/')[1];
+                    if (errorMessage !== "")
+                        errorMessage += "\n";
+                    errorMessage += "❌ " + result.file.split('integration/')[1];
                 } 
             });
         });
     });
-    send_report(error_message);
+    send_report(errorMessage);
 })
