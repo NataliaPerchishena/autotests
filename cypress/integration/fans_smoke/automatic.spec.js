@@ -5,6 +5,8 @@ context('Blauberg', () => {
 
   it('automatic_selection', () => {
     cy.get('#automatic_calculate-submit').click({ force: true })
+    
+    cy.wait(10000);
 
     cy.checkBasic()
   })
