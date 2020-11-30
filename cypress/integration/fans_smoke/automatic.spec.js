@@ -1,6 +1,6 @@
 context('Blauberg', () => {
   beforeEach(() => {
-    cy.visit('https://blaubergselector.com/smoke_fan')
+    cy.visit('smoke_fan')
   })
 
   it('automatic_selection', () => {

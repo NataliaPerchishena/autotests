@@ -1,6 +1,6 @@
 context('Blauberg', () => {
   beforeEach(() => {
-    cy.visit('https://blaubergselector.com/heat_exchanger/rotary')
+    cy.visit('heat_exchanger/rotary')
   })
 
   it('calculate_button', () => {

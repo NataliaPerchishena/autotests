@@ -1,6 +1,6 @@
 context('Blauberg', () => {
   beforeEach(() => {
-    cy.visit('https://blaubergselector.com/nrvu_bvu')
+    cy.visit('nrvu_bvu')
   })
 
   it('manual_selection', () => {

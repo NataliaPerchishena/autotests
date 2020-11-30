@@ -1,6 +1,6 @@
 context('Blauberg', () => {
   beforeEach(() => {
-    cy.visit('https://blaubergselector.com/cooler_water')
+    cy.visit('cooler_water')
   })
 
   it('automatic_selection', () => {

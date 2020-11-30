@@ -37,7 +37,7 @@ Cypress.Commands.add('checkImage', () => {
 })
 
 Cypress.Commands.add('checkSaveAs', () => {
-    cy.contains('[data-cy=save_as]').click().get('#modal-auth').should('be.visible')
+    cy.get('[data-cy=save_as]').first().click().get('#modal-auth').should('be.visible')
 })
 
 Cypress.Commands.add('checkPdf', () => {
@@ -46,9 +46,10 @@ Cypress.Commands.add('checkPdf', () => {
 })
 
 Cypress.Commands.add('checkBasic', () => {
+
     cy.checkTitle();
     cy.checkDescription();
     cy.checkImage();
-    // cy.checkSaveAs();
+    cy.checkSaveAs();
     cy.checkPdf();
 })

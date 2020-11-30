@@ -1,6 +1,6 @@
 context('Blauberg', () => {
   beforeEach(() => {
-    cy.visit('https://blaubergselector.com/heater_electric')
+    cy.visit('heater_electric')
   })
 
   it('manual_selection', () => {
