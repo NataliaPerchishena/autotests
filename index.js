@@ -1,12 +1,12 @@
 const { merge } = require('mochawesome-merge')
 const request = require('request');
-const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
+const { env } = require('process');
 
 const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, ".env") });
 
 const send_report = (message) => {
     let environment = process.env.ENVIRONMENT; 
