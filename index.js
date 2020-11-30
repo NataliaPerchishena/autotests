@@ -1,8 +1,7 @@
 const { merge } = require('mochawesome-merge')
 const request = require('request');
 const path = require('path');
-const dotenv = require('dotenv');
-const { env } = require('process');
+const dotenv = require('dotenv');5
 
 const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
 
@@ -26,19 +25,17 @@ const options = {
 }
 
 merge(options).then(report => {
-    if (report.failures == 0)
+    if (report.stats.failures == 0)
     {
         send_report("✅ All tests passed");    
         return ;
     }
-
     let errorMessage = "";
     report.results.forEach(result => {
         result.suites.forEach(suite => {
             suite.tests.forEach(test => {
                 if (test.pass != true)
                 {
-                    
                     if (errorMessage !== "")
                         errorMessage += "\n";
                     errorMessage += "❌ " + result.file.split('integration/')[1];
