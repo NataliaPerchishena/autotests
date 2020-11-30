@@ -3,7 +3,7 @@ context('Blauberg', () => {
     cy.visit('https://blaubergselector.com/cooler_water')
   })
 
-  it('Automatic selection button', () => {
+  it('automatic_selection', () => {
     cy.get('#automatic_calculate-submit').click({ force: true })
 
     cy.get('div[class="col-md-5 text-center product-image"]').find('img').should('be.visible')

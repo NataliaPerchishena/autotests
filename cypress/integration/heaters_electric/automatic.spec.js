@@ -3,9 +3,7 @@ context('Blauberg', () => {
     cy.visit('https://blaubergselector.com/heater_electric')
   })
 
-  // https://on.cypress.io/interacting-with-elements
-
-  it('Automatic selection button', () => {
+  it('automatic_selection', () => {
     cy.get('#automatic_calculate-submit').click({ force: true })
 
     cy.get('div[class="col-md-6 text-center product-image"]').find('img').should('be.visible')

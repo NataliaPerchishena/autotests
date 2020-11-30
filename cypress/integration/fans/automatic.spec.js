@@ -3,8 +3,7 @@ context('Blauberg', () => {
     cy.visit('https://blaubergselector.com/fan/')
   })
 
-  it('Automatic selection button', () => {
-    // cy.contains('Automatic selection').click({ force: true })
+  it('automatic_selection', () => {
     cy.get('#automatic_calculate-submit').click({ force: true })
 
     cy.get('div[class="col-lg-offset-3 col-md-offset-3 col-lg-6 col-md-6 col-xs-12 text-center"]').find('img').should('be.visible')

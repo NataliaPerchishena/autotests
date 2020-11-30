@@ -3,7 +3,7 @@ context('Blauberg', () => {
     cy.visit('https://blaubergselector.com/heat_exchanger/crossflow')
   })
 
-  it('Calculate button', () => {
+  it('calculate_button', () => {
     cy.get('#submit').click({ force: true })
 
     cy.get('div[class="container-fluid"]').find('img').should('be.visible')
