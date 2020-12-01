@@ -10,6 +10,8 @@ context('Blauberg', () => {
     cy.get('#static_pressure_at_operating_point').clear().type('10')
     cy.get('#manual_calculate-submit').click({ force: true })
 
+    cy.wait(1000);
+
     cy.checkBasic()
   })
 })
