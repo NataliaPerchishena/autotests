@@ -11,7 +11,7 @@ context('Blauberg', () => {
     cy.get('#motor_type').select('ec', { force: true})
     cy.get('#manual_calculate-submit').click({ force: true })
 
-    cy.wait(1000);
+    cy.wait(3000);
 
     cy.checkBasic()
   })
