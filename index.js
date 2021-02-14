@@ -3,45 +3,47 @@ const request = require('request');
 const path = require('path');
 const dotenv = require('dotenv');
 
-const env = process.argv[2];
-const resultsPath = path.join(__dirname, 'cypress', 'results', env, '*');
 
 dotenv.config({ path: path.join(__dirname, ".env") });
+const environments = process.env.ENVIRONMENT.split(';');
 
-const send_report = (message) => {
+const send_report = (environment, message) => {
     let telegramBotUrl = process.env.TELEGRAM_BOT_URL;
     let telegramChats = process.env.TELEGRAM_CHATS.split(';');
 
-    message = env + "\n" + message;
+    message = environment + "\n" + message;
     telegramChats.forEach(chat => {
         request(`${telegramBotUrl}/sendMessage?chat_id=${chat}&text=${encodeURI(message)}`);
     });
 };
 
-const options = {
-  files: [
-    resultsPath,
-  ],
-}
-
-merge(options).then(report => {
-    if (report.stats.failures == 0)
-    {
-        send_report("✅ All tests passed");    
-        return ;
-    }
-    let errorMessage = "";
-    report.results.forEach(result => {
-        result.suites.forEach(suite => {
-            suite.tests.forEach(test => {
-                if (test.pass != true)
-                {
-                    if (errorMessage !== "")
-                        errorMessage += "\n";
-                    errorMessage += "❌ " + result.file.split('integration/')[1];
-                } 
+environments.forEach(environment => {
+    const resultsPath = path.join(__dirname, 'cypress', 'results', environment, '*');
+    const options = {
+        files: [
+          resultsPath,
+        ],
+      }
+    merge(options).then(report => {
+        if (report.stats.failures == 0)
+        {
+            send_report(environment, "✅ All tests passed");    
+            return ;
+        }
+        let errorMessage = "";
+        report.results.forEach(result => {
+            result.suites.forEach(suite => {
+                suite.tests.forEach(test => {
+                    if (test.pass != true)
+                    {
+                        if (errorMessage !== "")
+                            errorMessage += "\n";
+                        errorMessage += "❌ " + result.file.split('integration/')[1];
+                    } 
+                });
             });
         });
-    });
-    send_report(errorMessage);
-})
+        send_report(environment, errorMessage);
+    })
+});
+
