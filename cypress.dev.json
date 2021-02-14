@@ -6,7 +6,7 @@
 	"video": false,
 	"reporter": "mochawesome",
  	"reporterOptions": {
-		"reportDir": "cypress/results",
+		"reportDir": "cypress/results/development",
 		"overwrite": false,
 		"html": false,
 		"json": true

@@ -1,18 +1,18 @@
 const { merge } = require('mochawesome-merge')
 const request = require('request');
 const path = require('path');
-const dotenv = require('dotenv');5
+const dotenv = require('dotenv');
 
-const resultsPath = path.join(__dirname, 'cypress', 'results', '*');
+const env = process.argv[2];
+const resultsPath = path.join(__dirname, 'cypress', 'results', env, '*');
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 const send_report = (message) => {
-    let environment = process.env.ENVIRONMENT; 
     let telegramBotUrl = process.env.TELEGRAM_BOT_URL;
     let telegramChats = process.env.TELEGRAM_CHATS.split(';');
 
-    message = environment + "\n" + message;
+    message = env + "\n" + message;
     telegramChats.forEach(chat => {
         request(`${telegramBotUrl}/sendMessage?chat_id=${chat}&text=${encodeURI(message)}`);
     });
