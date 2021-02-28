@@ -1,9 +1,0 @@
-version: "3.3"
-
-services:
-  cypress:
-    build: .
-    entrypoint: cypress run -C cypress.prod.json
-    shm_size: '2gb'
-    volumes:
-    - ./cypress/:/e2e/cypress

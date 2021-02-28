@@ -18,7 +18,7 @@ const send_report = (environment, message) => {
 };
 
 environments.forEach(environment => {
-    const resultsPath = path.join(__dirname, 'cypress', 'results', environment, '*');
+    const resultsPath = path.join('../', 'parser', 'cypress', 'results', environment, '*');
     const options = {
         files: [
           resultsPath,
