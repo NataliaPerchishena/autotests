@@ -2,7 +2,7 @@
 .vscode
 .DS_Store
 node_modules
-cypress/videos
-cypress/screenshots
-cypress/results/*
-!cypress/results/.gitkeep
+parser/cypress/videos
+parser/cypress/screenshots
+parser/cypress/results/*
+!parser/cypress/results/.gitkeep
