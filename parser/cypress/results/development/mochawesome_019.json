@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-28T13:51:52.329Z",
+    "end": "2021-02-28T13:52:02.341Z",
+    "duration": 10012,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "69b13eba-054c-4ea8-bc52-0bbca6a25a25",
+      "title": "",
+      "fullFile": "cypress/integration/nrvu_bvu/manual.spec.js",
+      "file": "cypress/integration/nrvu_bvu/manual.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "84b76372-df6b-430b-b10d-f29c6f61efe8",
+          "title": "Blauberg",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "manual_selection",
+              "fullTitle": "Blauberg manual_selection",
+              "timedOut": null,
+              "duration": 9892,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Manual selection').should('not.be.disabled').click({\n  force: true\n});\ncy.get('#airflow_supply').clear().type('3000');\ncy.get('#airflow_extract').clear().type('3000');\ncy.get('#manual_calculate-submit').click({\n  force: true\n});\ncy.checkBasic();",
+              "err": {},
+              "uuid": "38d78294-5559-442e-aa2b-1c14b085be97",
+              "parentUUID": "84b76372-df6b-430b-b10d-f29c6f61efe8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38d78294-5559-442e-aa2b-1c14b085be97"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9892,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/development",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -23,3 +23,33 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('checkTitle', () => {
+    cy.get('[data-cy=title]').should('be.visible')
+})
+
+Cypress.Commands.add('checkDescription', () => {
+    cy.get('[data-cy=description]').should('be.visible')
+})
+
+Cypress.Commands.add('checkImage', () => {
+    cy.get('[data-cy=image]').should('be.visible')
+})
+
+Cypress.Commands.add('checkSaveAs', () => {
+    cy.get('[data-cy=save_as]').first().click().get('#modal-auth').should('be.visible')
+})
+
+Cypress.Commands.add('checkPdf', () => {
+    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
+    cy.get('embed').should('be.visible')
+})
+
+Cypress.Commands.add('checkBasic', () => {
+
+    cy.checkTitle();
+    // cy.checkDescription();
+    cy.checkImage();
+    cy.checkSaveAs();
+    cy.checkPdf();
+})

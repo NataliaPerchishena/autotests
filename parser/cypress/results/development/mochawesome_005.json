@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-28T13:48:12.466Z",
+    "end": "2021-02-28T13:48:19.753Z",
+    "duration": 7287,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "87bf4914-59e5-4503-bbe6-1de1e6fa7c0f",
+      "title": "",
+      "fullFile": "cypress/integration/coolers_water/automatic.spec.js",
+      "file": "cypress/integration/coolers_water/automatic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b9df4ff0-a116-4cf0-97ba-1f8261fa3e1c",
+          "title": "Blauberg",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "automatic_selection",
+              "fullTitle": "Blauberg automatic_selection",
+              "timedOut": null,
+              "duration": 7166,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#automatic_calculate-submit').click({\n  force: true\n});\ncy.checkBasic();",
+              "err": {},
+              "uuid": "54ff8d22-ec73-44e6-a12e-367896308406",
+              "parentUUID": "b9df4ff0-a116-4cf0-97ba-1f8261fa3e1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "54ff8d22-ec73-44e6-a12e-367896308406"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7166,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/development",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

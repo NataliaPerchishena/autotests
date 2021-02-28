@@ -2,8 +2,9 @@ version: "3.3"
 
 services:
   cypress:
-    build: .
+    build: ./parser
+
     entrypoint: cypress run -C cypress.dev.json
     shm_size: '2gb'
     volumes:
-    - ./cypress/:/e2e/cypress
+    - ./parser/cypress/:/e2e/cypress
