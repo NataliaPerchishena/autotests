@@ -13,9 +13,9 @@ context('Blauberg', () => {
     cy.get('#summer_off_temperature').clear().type('24');
     cy.get('#winter_on_temperature').clear().type('-10');
     cy.get('#winter_on_relative_humidity').clear().type('90');
-    cy.get('#winter_off_temperature').clear().type('10');      
+    cy.get('#winter_off_temperature').clear().type('10');     
+     
     cy.get('#manual_calculate-submit').click({ force: true });
-
     cy.wait(1000);
 
     cy.get('#calculation_summer_airflow').should('have.text', '200');
