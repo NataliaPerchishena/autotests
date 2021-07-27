@@ -4,7 +4,7 @@ context('Blauberg', () => {
   })
 
   it('calculate_button', () => {
-    cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
+    cy.get('#manual_selection').click({ force: true })
     cy.get('#seasons').select('both', { force: true });
     cy.get('#airflow').clear().type('200');
     cy.get('#model').select('OKF-400x200-3', { force: true });
