@@ -9,6 +9,9 @@ context('Blauberg', () => {
     cy.get('#model').select('AV03 UVU 2500', { force: true });
     cy.get('#airflow').clear().type('2000');  
     cy.get('#pressure_static').clear().type('200');
+    cy.get('#supply_heater_water_temperature_after').clear().type('22');
+    cy.get('#supply_heater_water_temperature_in').clear().type('80');
+    cy.get('#supply_heater_water_temperature_out').clear().type('60');
     cy.get('#supply_heater').select('water', { force: true});
     cy.get('#supply_cooler').select('freon', { force: true });
 

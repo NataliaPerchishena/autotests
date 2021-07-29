@@ -56,7 +56,7 @@ context('Blauberg', () => {
     cy.get('#calculation_winter_extract_c_output_absolute_humidity').should('have.text', '5.36');
     cy.get('#calculation_winter_extract_c_output_wet_bulb_temperature').should('have.text', '6.65');
     cy.get('#calculation_winter_extract_c_output_enthalpy').should('have.text', '22');
-    cy.get('#calculation_winter_extract_c_face_air_velocity').should('have.text', '1.1');
+    cy.get('#calculation_winter_extract_c_face_air_velocity').should('have.text', '1.11');
     cy.get('#calculation_winter_extract_c_air_pressure_drop').should('have.text', '49.23');
     cy.get('#calculation_winter_extract_c_temperature_efficiency_dry').should('have.text', '88.87');
     cy.get('#calculation_winter_extract_c_temperature_efficiency_wet').should('have.text', '88.87');
