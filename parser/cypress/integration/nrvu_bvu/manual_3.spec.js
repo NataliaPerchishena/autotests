@@ -13,6 +13,9 @@ context('Blauberg', () => {
     cy.get('#pressure_static_extract').clear().type('200');
     cy.get('#supply_heater').select('water', { force: true });
     cy.get('#supply_cooler').select('water', { force: true });
+    cy.get('#supply_heater_water_temperature_after').clear().type('22');
+    cy.get('#supply_heater_water_temperature_in').clear().type('80');
+    cy.get('#supply_heater_water_temperature_out').clear().type('60');
 
     cy.get('#manual_calculate-submit').click({ force: true })
     cy.wait(1000);
@@ -50,9 +53,9 @@ context('Blauberg', () => {
     cy.get('#calculation_summer_on_temperature').should('have.text', '23.67');
     cy.get('#calculation_summer_off_temperature').should('have.text', '20');
     cy.get('#calculation_summer_water_in').should('have.text', '7');
-    cy.get('#calculation_summer_water_in').should('have.text', '12');
+    cy.get('#calculation_summer_water_out').should('have.text', '12');
     cy.get('#calculation_summer_on_relative_humidity').should('have.text', '58.03');
-    cy.get('calculation_summer_off_relative_humidity#').should('have.text', '65.56');
+    cy.get('#calculation_summer_off_relative_humidity').should('have.text', '65.56');
     cy.get('#calculation_summer_glycol').should('have.text', '0');
     cy.get('#calculation_summer_required_cooling_power').should('have.text', '4.25');
     cy.get('#calculation_summer_maximum_cooling_power').should('have.text', '8.41');

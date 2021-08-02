@@ -28,7 +28,7 @@ context('Blauberg', () => {
     cy.get('#calculation_summer_extract_de_exchange_efficiency_wet').should('have.text', '0');
     cy.get('#calculation_winter_supply_os_temperature_after_heat_exchange').should('have.text', '14.23');
     cy.get('#calculation_winter_supply_os_relative_humidity_after_heat_exchange').should('have.text', '24.91');
-    cy.get('#calculation_winter_supply_ds_exchange_efficiency_dry').should('have.text', '78.91');
+    cy.get('#calculation_winter_supply_ds_exchange_efficiency_dry').should('have.text', '78.99');
     cy.get('#calculation_winter_supply_ds_exchange_efficiency_wet').should('have.text', '28');
     cy.get('#calculation_winter_supply_ds_heat_recovery_wet').should('have.text', '22.07');
     cy.get('#calculation_winter_extract_oe_temperature_after_heat_exchange').should('have.text', '-7.07');

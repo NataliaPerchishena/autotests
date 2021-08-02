@@ -17,7 +17,7 @@ context('Blauberg', () => {
     cy.get('#manual_calculate-submit').click({ force: true });
     cy.wait(1000);
     
-    cy.get('#calculation_summer_supply_output_temperature').should('have.text', '23.4');
+    cy.get('#calculation_summer_supply_output_temperature').should('have.text', '23.33');
     cy.get('#calculation_summer_supply_output_relative_humidity').should('have.text', '58.55');
     cy.get('#calculation_summer_supply_condensation').should('have.text', '0');
     cy.get('#calculation_summer_supply_temperature_efficiency_dry').should('have.text', '83.43');
@@ -47,15 +47,14 @@ context('Blauberg', () => {
     cy.get('#calculation_off_relative_humidity').should('have.text', '5.5');
     cy.get('#calculation_required_heating_power').should('have.text', '1.76');
     cy.get('#calculation_maximum_heating_power').should('have.text', '9');
-    cy.get('#calculation_summer_airflow').should('have.text', '1.76');
-    cy.get('#calculation_required_heating_power').should('have.text', '2000');
+    cy.get('#calculation_summer_airflow').should('have.text', '2000');
     cy.get('#calculation_summer_on_temperature').should('have.text', '23.33');
     cy.get('#calculation_summer_off_temperature').should('have.text', '20');
     cy.get('#calculation_summer_on_relative_humidity').should('have.text', '58.55');
     cy.get('#calculation_summer_relative_humidity_output').should('have.text', '65.01');
     cy.get('#calculation_summer_evaporation_temperature').should('have.text', '5');
     cy.get('#calculation_summer_superheat').should('have.text', '2.5');
-    cy.get('#calculation_summer_required_power').should('have.text', '3.96');
+    cy.get('#calculation_summer_required_power').should('have.text', '3.93');
     cy.get('#calculation_summer_maximum_power').should('have.text', '8.18');
     cy.get('#calculation_summer_condensation').should('have.text', '-2.26');
     cy.get('#calculation_summer_air_pressure_drop').should('have.text', '64.59');

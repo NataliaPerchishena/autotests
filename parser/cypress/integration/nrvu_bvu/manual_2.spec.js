@@ -13,6 +13,9 @@ context('Blauberg', () => {
     cy.get('#pressure_static_extract').clear().type('200');
     cy.get('#supply_heater').select('water', { force: true });
     cy.get('#supply_cooler').select('water', { force: true });
+    cy.get('#supply_heater_water_temperature_after').clear().type('22');
+    cy.get('#supply_heater_water_temperature_in').clear().type('80');
+    cy.get('#supply_heater_water_temperature_out').clear().type('60');
     
     cy.get('#manual_calculate-submit').click({ force: true })
     cy.wait(1000);
@@ -47,8 +50,7 @@ context('Blauberg', () => {
     cy.get('#calculation_off_relative_humidity').should('have.text', '5.5');
     cy.get('#calculation_required_heating_power').should('have.text', '1.76');
     cy.get('#calculation_maximum_heating_power').should('have.text', '12.65');
-    cy.get('#calculation_water_pressure_drop').should('have.text', '');
-    cy.get('#').should('have.text', '0.31');
+    cy.get('#calculation_water_pressure_drop').should('have.text', '0.31');
     cy.get('#calculation_water_flow').should('have.text', '0.02');
     cy.get('#calculation_water_in').should('have.text', '80');
     cy.get('#calculation_water_out').should('have.text', '60');

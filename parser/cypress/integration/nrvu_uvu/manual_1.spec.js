@@ -9,11 +9,11 @@ context('Blauberg', () => {
     cy.get('#model').select('AV03 UVU 2500', { force: true });
     cy.get('#airflow').clear().type('2000');  
     cy.get('#pressure_static').clear().type('200');
+    cy.get('#supply_heater').select('water', { force: true});
+    cy.get('#supply_cooler').select('freon', { force: true });
     cy.get('#supply_heater_water_temperature_after').clear().type('22');
     cy.get('#supply_heater_water_temperature_in').clear().type('80');
     cy.get('#supply_heater_water_temperature_out').clear().type('60');
-    cy.get('#supply_heater').select('water', { force: true});
-    cy.get('#supply_cooler').select('freon', { force: true });
 
     cy.get('#manual_calculate-submit').click({ force: true });
     cy.wait(1000);
@@ -36,7 +36,6 @@ context('Blauberg', () => {
     cy.get('#calculation_cooler_summer_relative_humidity_output').should('have.text', '57.96');
     cy.get('#calculation_cooler_summer_evaporation_temperature').should('have.text', '5');
     cy.get('#calculation_cooler_summer_superheat').should('have.text', '2.5');
-    cy.get('#calculation_cooler_summer_condensation_temperature').should('have.text', '45');
     cy.get('#calculation_cooler_summer_subcool').should('have.text', '2.5');
     cy.get('#calculation_cooler_summer_required_power').should('have.text', '10.61');
     cy.get('#calculation_cooler_summer_maximum_power').should('have.text', '14.78');
