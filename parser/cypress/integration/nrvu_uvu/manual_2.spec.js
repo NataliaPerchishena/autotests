@@ -36,8 +36,8 @@ context('Blauberg', () => {
     cy.get('#calculation_cooler_summer_water_pressure_drop').should('have.text', '2.71');
     cy.get('#calculation_cooler_summer_air_pressure_drop').should('have.text', '23.54');
     cy.get('#calculation_cooler_summer_face_air_velocity').should('have.text', '1.39');
-    cy.get('#calculation_fans_winter_ia').should('have.text', '1.13');                                                …                                                 ');
-    cy.get('#calculation_fans_winter_number_of_fans').should('have.text', '1');                                               …                                                 ');
+    cy.get('#calculation_fans_winter_ia').should('have.text', '1.13');
+    cy.get('#calculation_fans_winter_number_of_fans').should('have.text', '1');
     cy.get('#calculation_fans_winter_sfp').should('have.text', '463.7');
     
     cy.checkBasic();
