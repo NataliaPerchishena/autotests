@@ -12,7 +12,7 @@ context('Blauberg', () => {
     cy.get('#model').select('VDO-400-2D/0.55-6/25/AL-300/2', { force: true});
 
     cy.get('#manual_calculate-submit').click({ force: true })
-    cy.wait(5000);
+    cy.wait(15000);
 
     cy.get('#calculation_fans_value_fan_diameter').should('have.text', '400');
     cy.get('#calculation_fans_value_airflow').should('have.text', '2773.56');

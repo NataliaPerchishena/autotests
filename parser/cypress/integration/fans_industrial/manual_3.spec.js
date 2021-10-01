@@ -12,7 +12,7 @@ context('Blauberg', () => {
     cy.get('#model').select('Iso-V EC 355', { force: true});
     
     cy.get('#manual_calculate-submit').click({ force: true })
-    cy.wait(1000);
+    cy.wait(15000);
 
     cy.get('#calculation_fans_at_operating_point_rotation_speed').should('have.text', '1105.46');
     cy.get('#calculation_fans_at_operating_point_airflow').should('have.text', '2000');

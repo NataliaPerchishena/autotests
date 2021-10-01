@@ -12,7 +12,7 @@ context('Blauberg', () => {
     cy.get('#model').select('Turbo 200', { force: true});
     
     cy.get('#manual_calculate-submit').click({ force: true })
-    cy.wait(5000);
+    cy.wait(15000);
 
     cy.get('#calculation_fans_low_rotation_speed').should('have.text', '1796.79');
     cy.get('#calculation_fans_low_airflow').should('have.text', '571.59');
