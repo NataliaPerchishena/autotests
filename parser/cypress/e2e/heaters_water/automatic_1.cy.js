@@ -1,6 +1,11 @@
 context('Blauberg', () => {
-  beforeEach(() => {
-    cy.visit('heater_water')
+  before( () => {
+    Cypress.session.clearAllSavedSessions();
+  })
+    beforeEach(() => {
+      let Url = Cypress.env('baubUrl');
+    //  cy.login(Url);
+      cy.visit(Url+'/heater_water')
   })
 
   it('automatic_selection', () => {

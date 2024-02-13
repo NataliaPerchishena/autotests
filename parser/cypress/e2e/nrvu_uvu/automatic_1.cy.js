@@ -1,12 +1,18 @@
 context('Blauberg', () => {
-  beforeEach(() => {
-    cy.visit('nrvu_uvu')
+  before( () => {
+  //  Cypress.session.clearAllSavedSessions();
+  })
+    beforeEach(() => {
+      let Url = Cypress.env('baubUrl');
+      cy.login(Url);
+      cy.visit(Url+'/nrvu_uvu');
+  
   })
 
   it('automatic_selection', () => {
     cy.get('#airflow').clear().type('2000')
     cy.get('#automatic_calculate-submit').click({ force: true })
 
-    cy.checkBasic();
+       cy.checkBasicAfterAuth();
   })
 })

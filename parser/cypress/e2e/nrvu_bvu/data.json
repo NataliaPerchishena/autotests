@@ -1,0 +1,17 @@
+{
+    "calculation_summer_supply_os_temperature_after_heat_exchange": 23.7,
+    "calculation_summer_supply_os_relative_humidity_after_heat_exchange": 58,
+    "calculation_summer_supply_ds_exchange_efficiency_dry": 79.1,
+    "calculation_summer_supply_ds_exchange_efficiency_wet": 0,
+    "calculation_summer_supply_ds_heat_recovery_wet": -4.3,
+    "calculation_summer_supply_ds_pressure_drop": 157,
+    "calculation_summer_supply_s_face_air_velocity": 0.6,
+    "calculation_summer_supply_temperature_efficiency_at_balanced_flow": 78.9,
+
+    "calculation_summer_extract_oe_temperature_after_heat_exchange": 28.3,
+    "calculation_summer_extract_oe_relative_humidity_after_heat_exchange": 34.3,
+    "calculation_summer_extract_de_exchange_efficiency_dry": 79.1,
+    "calculation_summer_extract_de_exchange_efficiency_wet": 0,
+    "calculation_summer_extract_de_pressure_drop": 153,
+    "calculation_summer_extract_e_face_air_velocity": 0.6
+}

@@ -42,7 +42,13 @@ Cypress.Commands.add('checkSaveAs', () => {
 
 Cypress.Commands.add('checkPdf', () => {
     cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
+    cy.wait(1000)
     cy.get('embed').should('be.visible')
+})
+Cypress.Commands.add('checkPdf200', () => {
+    cy.intercept('pdf').as('postspdf');
+    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
+    cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
 })
 
 Cypress.Commands.add('checkBasic', () => {
@@ -51,5 +57,36 @@ Cypress.Commands.add('checkBasic', () => {
     // cy.checkDescription();
     cy.checkImage();
     cy.checkSaveAs();
+    cy.checkPdf();
+})
+
+Cypress.Commands.add('login', (Url) => {
+  //  Cypress.session.clearAllSavedSessions();
+    cy.session('session', () =>{    
+    //let Url = Cypress.env('baubUrl');
+    cy.visit(Url+'/login');
+    let testUser = Cypress.env('prodUser');
+//cy.wait(2000)
+    cy.get('input[name=email]').first().type(testUser.email);
+    cy.get('input[name=password]').first().type(testUser.password);
+    cy.get('button.register_button').first().click({ force: true });
+    cy.wait(1000)     
+},
+      { 
+         cacheAcrossSpecs: true, 
+      }
+    )   
+  })
+
+  Cypress.Commands.add('checkSaveAsAfterAuth', () => {
+    cy.get('[data-cy=save_as]').first().click().get('#save_project_modal').should('be.visible');
+    cy.get('#save_project_form').children('.modal-footer').children('.btn-default').click({force: true})
+})
+Cypress.Commands.add('checkBasicAfterAuth', () => {
+
+    cy.checkTitle();
+    // cy.checkDescription();
+    cy.checkImage();
+    cy.checkSaveAsAfterAuth();
     cy.checkPdf();
 })

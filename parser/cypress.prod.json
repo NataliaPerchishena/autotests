@@ -3,6 +3,7 @@
 	"viewportHeight": 1800,
 	"baseUrl": "https://blaubergselector.com",
 	"chromeWebSecurity": false,
+	"defaultCommandTimeout": 10000,
 	"video": false,
 	"reporter": "mochawesome",
  	"reporterOptions": {

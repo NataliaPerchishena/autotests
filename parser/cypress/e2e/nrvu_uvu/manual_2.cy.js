@@ -1,6 +1,11 @@
 context('Blauberg', () => {
-  beforeEach(() => {
-    cy.visit('nrvu_uvu')
+  before( () => {
+   // Cypress.session.clearAllSavedSessions();
+  })
+    beforeEach(() => {
+      let Url = Cypress.env('baubUrl');
+      cy.login(Url);
+      cy.visit(Url+'/nrvu_uvu')
   })
 
   it('manual_selection', () => {

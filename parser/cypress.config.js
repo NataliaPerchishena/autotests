@@ -1,6 +1,6 @@
 module.exports = {
-  viewportWidth: 2880,
-  viewportHeight: 1800,
+  viewportWidth: 1400,
+  viewportHeight: 1200,
   chromeWebSecurity: false,
   video: false,
   reporter: 'mochawesome',
@@ -16,6 +16,7 @@ module.exports = {
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'https://blaubergselector.com',
-  },
+  //baseUrl: 'https://blaubergselector.com',
+   baseUrl: 'https://blaubergselector.ensocore.com',
+  }
 }
