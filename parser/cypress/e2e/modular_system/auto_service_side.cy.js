@@ -8,7 +8,7 @@ context('Blauberg', () => {
         cy.visit(Url + '/modular_system');
 
     })
-    //check list of service_side
+    //check list of service_side   test9
     it('service_side_list', () => {
         
             cy.get('#select2-service_side-container').click()
