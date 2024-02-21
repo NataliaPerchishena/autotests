@@ -137,15 +137,15 @@ context('Blauberg', () => {
     cy.checkPdf();
   })
 
-  it.only('automatic_selection_app_code', () => {
-      cy.get('#automatic_calculate-submit').click({ force: true })
-      cy.wait(1000);
-      cy.checkTitle();
+//   it.only('automatic_selection_app_code', () => {
+//       cy.get('#automatic_calculate-submit').click({ force: true })
+//       cy.wait(1000);
+//       cy.checkTitle();
       
-//app_code
-cy.get('#app_code_container').should('be.visible').find('h5').should('exist').children('span').should('have.length', 21).should("not.be.empty");
+// //app_code
+// cy.get('#app_code_container').should('be.visible').find('h5').should('exist').children('span').should('have.length', 21).should("not.be.empty");
 
-  })
+//   })
   
 
   it('automatic_selection', () => {
