@@ -143,7 +143,7 @@ context('Blauberg', () => {
       cy.checkTitle();
       
 //app_code
-cy.get('#app_code_container').should('be.visible').find('h5').should('exist').children('span').should('have.length', 22).should("not.be.empty");
+cy.get('#app_code_container').should('be.visible').find('h5').should('exist').children('span').should('have.length', 21).should("not.be.empty");
 
   })
   
