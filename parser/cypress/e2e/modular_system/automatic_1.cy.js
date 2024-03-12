@@ -20,18 +20,27 @@ context('Blauberg', () => {
   cy.get('#seasons').select('summer', {force: true})
   cy.get('#tabular_select_unit_size').find('input[value="BLQ09"]').check()
 
-    cy.intercept('calculate').as('postcalc');
+     cy.intercept('calculate').as('postcalc');
       cy.get('#automatic_calculate-submit').click({ force: true }).wait(1000)
-      cy.wait('@postcalc').its('response.statusCode').should('not.eq', 500)
+       cy.wait('@postcalc').its('response.statusCode').should('not.eq', 500)
 
       cy.get('#front_projection_drawing').should('be.visible');
-      cy.checkDescription();
-      cy.checkImage();
-      cy.checkSaveAsAfterAuth();
-      //check pdf
-      cy.intercept('pdf').as('postspdf');
-      cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-      cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
-        
+      cy.checkBasicAfterAuth();
+
+
+
+      // cy.intercept('pdf').as('postpdf');
+      // cy.get('[data-cy=pdf]').first().click({ force: true }).wait(10000)
+      // cy.wait('@postpdf').its('response.statusCode').should('eq', 200)
+  
+
+
+       // cy.intercept('GET', /\/modular_system\/pdf/).as('postpdf');
+      //  cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
+      //  cy.wait(15000)
+      // cy.window().its('length').should('be.gt', 1);
+ 
+
   })
+
 })

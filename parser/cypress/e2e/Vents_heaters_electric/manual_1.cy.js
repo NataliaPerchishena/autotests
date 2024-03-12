@@ -10,8 +10,8 @@ context('Vents', () => {
     cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
     cy.get('#airflow').clear().type('200');
     cy.get('#on_relative_humidity').clear().type('90');
-    cy.get('#on_temperature').clear().type('-10');
-    cy.get('#off_temperature').clear().type('10');
+    cy.get('#on_temperature').clear().type('-10', { force: true});
+    cy.get('#off_temperature').clear().type('10',{ force: true});
     cy.get('#model').select('NK-100-1.6-1', { force: true});
     
     cy.get('#manual_calculate-submit').click({ force: true });

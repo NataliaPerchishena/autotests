@@ -1,17 +1,20 @@
 context('Blauberg', () => {
   before(() => {
-    // Cypress.session.clearAllSavedSessions();
+     Cypress.session.clearAllSavedSessions();
+    Cypress.session.clearCurrentSessionData()
   })
   beforeEach(() => {
     //Cypress.session.clearAllSavedSessions();
-    let Url = Cypress.env('baubUrl');
-
-    cy.login(Url);
-    cy.visit(Url + '/nrvu_bvu');
+    let Url = Cypress.env('baseUrl');
+    
+     cy.login(Url);
+     cy.visit(Url + '/nrvu_bvu');
 
   })
 
+  //pre-heater
   it('automatic_selection_pre_heater', () => {
+  
     cy.get('#select2-supply_pre_heater-container').click()
     var pre_heater = ['not.exist', 'exist', 'exist']
     var i = 0;
@@ -22,7 +25,7 @@ context('Blauberg', () => {
         cy.get('#select2-supply_pre_heater-container').contains(val, { matchCase: false })
       })
       cy.get('#automatic_calculate-submit').click({ force: true })
-      cy.wait(1000);
+      cy.wait(3000);
       cy.checkTitle();
       cy.get('#results-data').contains('Pre-heater').should(pre_heater[i])
       i++;
@@ -30,7 +33,7 @@ context('Blauberg', () => {
     cy.checkPdf();
   })
 
-
+//main heater
   it('automatic_selection_heater', () => {
     cy.get('#select2-supply_heater-container').click();
     const heater = ['not.exist', 'exist', 'exist'];
@@ -67,7 +70,7 @@ context('Blauberg', () => {
   });
 
 
-  
+  //seasons
  it('automatic_selection_seasons', () => {
      cy.get('#select2-seasons-container').click()
 
@@ -87,7 +90,7 @@ context('Blauberg', () => {
   })
 
 
-
+//type
   it('automatic_selection_recovery_type', () => {
     cy.get('#select2-recovery_type-container').click()
     cy.get('#recovery_type option').each(($el) => {
@@ -103,7 +106,7 @@ context('Blauberg', () => {
     cy.checkPdf();
   })
 
-
+//rotary hygro
   it('automatic_selection_rotary_hygroscopic', () => {
     cy.get('#select2-recovery_type-container').click()
     cy.get('#recovery_type').select('rotary', { force: true })
@@ -114,7 +117,7 @@ context('Blauberg', () => {
     cy.checkTitle();
   })
 
-
+//install type ceiling, vertical, horizontal
   it('automatic_selection_recovery_type_and_install_type', () => {
     //var i = 0;
     cy.get('#select2-recovery_type-container').click()

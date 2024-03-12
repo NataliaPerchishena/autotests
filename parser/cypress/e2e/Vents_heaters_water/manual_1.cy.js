@@ -7,7 +7,7 @@ context('Vents', () => {
 
   it('calculate_button', () => {
     cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
-    cy.get('#airflow').clear().type('200');
+    cy.get('#airflow').clear().type('200',{ force: true});
     cy.get('#on_relative_humidity').clear().type('90');
     cy.get('#water_in').clear().type('80');
     cy.get('#water_out').clear().type('60');

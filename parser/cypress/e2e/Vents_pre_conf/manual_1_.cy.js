@@ -216,9 +216,6 @@ context('Vents', () => {
       cy.wait(1000);
       
       cy.get('[data-cy=title]').should('include.text', 'AVS95 CFP8700');
-      cy.intercept('pdf').as('postspdf');
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-    
-   cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
+      cy.checkBasicAfterAuth()
     })
 })
