@@ -3,7 +3,7 @@ context('Blauberg', () => {
         // Cypress.session.clearAllSavedSessions();
     })
     beforeEach(() => {
-        let Url = Cypress.env('baubUrl');
+        let Url = Cypress.env('baseUrl');
         cy.login(Url);
         cy.visit(Url + '/modular_system');
 
@@ -42,7 +42,10 @@ context('Blauberg', () => {
                     cy.get('#automatic_calculate-submit').click({ force: true }).wait(1000);
                     cy.get('#casing-table').should('be.visible').should("not.be.empty").
                         find('tbody').children('tr').eq(6).find('td').eq(1).contains(val, { matchCase: false })
+                        // cy.checkPdf200()
+                        // cy.go('back')
                 })
+               
             })
         })
     })

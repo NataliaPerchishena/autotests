@@ -16,7 +16,7 @@ context('Vents', () => {
   cy.get('#type').select('crossflow', { force: true })
   cy.get('#select2-seasons-container').click()
   cy.get('#seasons').select('summer', {force: true})
-  cy.get('#tabular_select_unit_size').find('input[value="AVF09"]').check()
+  cy.get('#tabular_select_unit_size').find('input[value="AVQ09"]').check()
 
     cy.intercept('calculate').as('postcalc');
       cy.get('#automatic_calculate-submit').click({ force: true }).wait(1000)

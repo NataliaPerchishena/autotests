@@ -3,7 +3,7 @@ context('Vents', () => {
     // Cypress.session.clearAllSavedSessions();
   })
   beforeEach(() => {
-    let Url = Cypress.env('ventsUrl');
+    let Url = Cypress.env('baseUrl');
     cy.login(Url);
     cy.visit(Url + '/pre_configured_heat_recovery_unit');
 

@@ -3,7 +3,7 @@ context('Blauberg', () => {
     // Cypress.session.clearAllSavedSessions();
   })
   beforeEach(() => {
-    let Url = Cypress.env('baubUrl');
+    let Url = Cypress.env('baseUrl');
     cy.login(Url);
     cy.visit(Url + '/pre_configured_heat_recovery_unit');
 
@@ -70,7 +70,7 @@ it('automatic_selection_fans', () => {
 
 })
 
-//check recovery_unit_type_inst_type_horizontal 200
+//check recovery_unit_type_inst_type_horizontal check title
   it('automatic_selection_recovery_unit_type_inst_type_horizontal', () => {
     cy.get('#inst_type_horizontal').click({ force: true })
     cy.get('#pre_configured_heat_recovery_unit_type').click()
@@ -86,7 +86,7 @@ it('automatic_selection_fans', () => {
     });
   })
 
-//check list of inst_type for counterflow plate
+//check list of inst_type for counterflow plate check title
   it('automatic_selection_inst_type_recovery_unit_type_plate', () => {
     cy.get('#select2-type-container').click()
     cy.get('#type').select('counterflow', { force: true })
@@ -100,7 +100,7 @@ it('automatic_selection_fans', () => {
     })
   })
 
-//check - rotary_hygroscopic 200
+//check - rotary_hygroscopic check title
   it('automatic_selection_rotary_hygroscopic', () => {
     cy.get('#select2-recovery_type-container').click()
     cy.get('#recovery_type').select('rotary', { force: true })
@@ -112,7 +112,7 @@ it('automatic_selection_fans', () => {
   })
 
 
-//check installation_configuration_ for horizontal (plate, rotory)
+//check installation_configuration_ for horizontal (plate, rotory) check title
 
   it('automatic_selection_recovery_type_and_install_type', () => {
     //var i = 0;

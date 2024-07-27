@@ -48,7 +48,7 @@ Cypress.Commands.add('checkPdf', () => {
 Cypress.Commands.add('checkPdf200', () => {
     cy.intercept('pdf').as('postspdf');
     cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
-    cy.wait(11000)
+    cy.wait(1100)
     cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
 })
 
@@ -80,9 +80,9 @@ Cypress.Commands.add('login', (Url) => {
          cacheAcrossSpecs: true, 
       }
     )   
-  })
+})
 
-  Cypress.Commands.add('checkSaveAsAfterAuth', () => {
+Cypress.Commands.add('checkSaveAsAfterAuth', () => {
     cy.get('[data-cy=save_as]').first().click().get('#save_project_modal').should('be.visible');
     cy.get('#save_project_form').children('.modal-footer').children('.btn-default').click({force: true})
 })

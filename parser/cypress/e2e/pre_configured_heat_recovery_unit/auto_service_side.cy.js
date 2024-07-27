@@ -28,7 +28,7 @@ context('Blauberg', () => {
 
     //check service side in report 
     it('automatic_selection_service_side', () => {
-        const istall_type = ['#inst_type_ceiling', '#inst_type_horizontal'];
+        const istall_type = ['#inst_type_ceiling', '#inst_type_horizontal', '#inst_type_vertical'];
         cy.wrap(istall_type).each((istall_type) => {
             cy.log(istall_type)
             cy.get(istall_type).check({ force: true })
@@ -42,6 +42,8 @@ context('Blauberg', () => {
                     cy.get('#automatic_calculate-submit').click({ force: true }).wait(1000);
                     cy.get('#casing-table').should('be.visible').should("not.be.empty").
                         find('tbody').children('tr').eq(6).find('td').eq(1).contains(val, { matchCase: false })
+                        cy.checkPdf200()
+                        cy.go('back')
                 })
             })
         })
