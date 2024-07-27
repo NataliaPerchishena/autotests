@@ -27,72 +27,72 @@ context('Blauberg', () => {
 //heat exchenger summer
     cy.get('#plate_h_e_supply_summer_temperature_after_heat_exchange_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 23.3);
-    cy.get('#calculation_summer_supply_output_relative_humidity').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 57.7);
-    cy.get('#calculation_summer_supply_condensation').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_supply_summer_relative_humidity_after_heat_exchange_value').invoke('text').should('be.a', 'string').
+    then(parseFloat).should('be.a', 'number').and('equal', 59.4);
+    cy.get('#plate_h_e_supply_summer_condensation_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 0);
-    cy.get('#calculation_summer_supply_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_supply_summer_exchange_efficiency_dry_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 80.5);
-    cy.get('#calculation_summer_supply_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_summer_supply_temperature_efficiency_wet_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 80.5);
-    cy.get('#calculation_summer_supply_heat_recovery_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_summer_supply_heat_recovery_dry_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', -4.1);
-    cy.get('#calculation_summer_supply_heat_recovery_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_summer_supply_heat_recovery_wet_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', -4.1);
-    cy.get('#calculation_summer_supply_air_pressure_drop').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_summer_supply_air_pressure_drop_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 154.7);
-    cy.get('#calculation_summer_supply_face_air_velocity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_supply_face_air_velocity_value').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 1.9);
-    cy.get('#calculation_summer_supply_temperature_efficiency_at_balanced_flow').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_supply_temperature_efficiency_at_balanced_flow').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 81);
-    cy.get('#calculation_summer_extract_output_temperature').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_output_temperature').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 28.4);
-    cy.get('#calculation_summer_extract_output_relative_humidity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_output_relative_humidity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 33.2);
-    cy.get('#calculation_summer_extract_condensation').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_condensation').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 0);
-    cy.get('#calculation_summer_extract_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 80.5);
-    cy.get('#calculation_summer_extract_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 80.5);
-    cy.get('#calculation_summer_extract_air_pressure_drop').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_air_pressure_drop').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 149.4);
-    cy.get('#calculation_summer_extract_face_air_velocity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_summer_extract_face_air_velocity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 1.9);
 //heat exchenger winter
-    cy.get('#calculation_winter_supply_output_temperature').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_output_temperature').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 17.2);
-    cy.get('#calculation_winter_supply_output_relative_humidity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_output_relative_humidity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 7.4);
-    cy.get('#calculation_winter_supply_condensation').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_condensation').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 0);
-    cy.get('#calculation_winter_supply_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 81.5);
-    cy.get('#calculation_winter_supply_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 87);
-    cy.get('#calculation_winter_supply_heat_recovery_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_heat_recovery_dry').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 20.4);
-    cy.get('#calculation_winter_supply_heat_recovery_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_heat_recovery_wet').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 21.8);
-    cy.get('#calculation_winter_supply_air_pressure_drop').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_air_pressure_drop').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 125.8)
-    cy.get('#calculation_winter_supply_face_air_velocity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_face_air_velocity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 1.7)
-    cy.get('#calculation_winter_supply_temperature_efficiency_at_balanced_flow').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_supply_temperature_efficiency_at_balanced_flow').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 81);
-    cy.get('#calculation_winter_extract_output_temperature').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_output_temperature').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', -1.3);
-    cy.get('#calculation_winter_extract_output_relative_humidity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_output_relative_humidity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 91);
-    cy.get('#calculation_winter_extract_condensation').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_condensation').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 8.4);
-    cy.get('#calculation_winter_extract_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_temperature_efficiency_dry').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 81.5);
-    cy.get('#calculation_winter_extract_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_temperature_efficiency_wet').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 63);
-    cy.get('#calculation_winter_extract_air_pressure_drop').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_air_pressure_drop').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 149.4);
-    cy.get('#calculation_winter_extract_face_air_velocity').invoke('text').should('be.a', 'string').
+    cy.get('#plate_h_e_calculation_winter_extract_face_air_velocity').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 1.9);
 
 //main heater
@@ -230,10 +230,6 @@ context('Blauberg', () => {
       cy.get('#manual_calculate-submit').click({ force: true });
       cy.wait(1000);
       
-      cy.get('[data-cy=title]').should('include.text', 'BLS95 CFP8700');
-      cy.intercept('pdf').as('postspdf');
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-    
-   cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
+      cy.checkBasicAfterAuth()
     })
 })

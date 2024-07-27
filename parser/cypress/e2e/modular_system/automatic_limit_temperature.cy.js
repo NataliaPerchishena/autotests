@@ -4,7 +4,7 @@ context('Blauberg', () => {
   })
   beforeEach(() => {
     //Cypress.session.clearAllSavedSessions();
-    let Url = Cypress.env('baubUrl');
+    let Url = Cypress.env('baseUrl');
 
     cy.login(Url);
     cy.visit(Url + '/modular_system');

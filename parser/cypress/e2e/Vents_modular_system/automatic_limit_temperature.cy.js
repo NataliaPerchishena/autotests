@@ -299,7 +299,7 @@ cy.wrap(in_out_limit_temp).each(($el)=>{
         cy.get('#supply_cooler').select('freon', { force: true })
         cy.get ('#supply_cooler_freon_evaporation_temperature').clear().type($el.evaporation);
         cy.get ('#supply_cooler_freon_condensation_temperature').clear().type($el.condensation);
-        cy.get ('#supply_cooler_freon_superheat').clear().type($el.superheat);
+        cy.get ('#supply_cooler_freon_superheat').clear({ force: true }).type($el.superheat);
         cy.get ('#supply_cooler_freon_subcool').clear().type($el.subcool);
         cy.get('#modular_system_supply_cooler').click({ force: true })
         cy.get('#automatic_calculate-submit').should('not.have.attr', 'disabled')

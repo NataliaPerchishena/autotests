@@ -43,11 +43,7 @@ context('Vents', () => {
       //    });
       i++;
     });
-    //pdf
-    cy.intercept('pdf').as('postspdf');
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-    cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
-      
+cy.checkBasicAfterAuth()
   });
 
 
@@ -67,10 +63,8 @@ context('Vents', () => {
     cy.checkTitle();
 
     });
-    //pdf
-    cy.intercept('pdf').as('postspdf');
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-    cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
+  
+    cy.checkPdf()
   })
 
 
@@ -96,7 +90,7 @@ context('Vents', () => {
   it('automatic_selection_inst_type_recovery_unit_type_plate', () => {
     cy.get('#select2-type-container').click()
     cy.get('#type').select('counterflow', { force: true })
-    const istall_type = ['#inst_type_ceiling', '#inst_type_horizontal'];
+    const istall_type = ['#inst_type_ceiling', '#inst_type_horizontal','#inst_type_vertical'];
     cy.wrap(istall_type).each((istall_type) => {
       cy.log(istall_type)
       cy.get(istall_type).check({ force: true })
@@ -104,10 +98,7 @@ context('Vents', () => {
       cy.wait(1000);
       cy.checkTitle();
     })
-    //pdf
-    cy.intercept('pdf').as('postspdf');
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-    cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
+    cy.checkPdf()
   })
 
 //check form - list of type for ceiling, for horizontal
@@ -133,10 +124,7 @@ context('Vents', () => {
       })
       //i++;
     });
-   //pdf
-   cy.intercept('pdf').as('postspdf');
-   cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true }).wait(1000)
-   cy.wait('@postspdf').its('response.statusCode').should('eq', 200)
+    cy.checkPdf()
   })
 
 

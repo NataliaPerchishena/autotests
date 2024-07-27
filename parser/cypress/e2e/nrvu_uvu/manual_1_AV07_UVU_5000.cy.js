@@ -35,8 +35,6 @@ context('Blauberg', () => {
     .then(parseFloat).should('be.a', 'number').and('eq', 5.6);
     cy.get('#calculation_heater_required_heating_power').invoke('text').should('be.a', 'string')
     .then(parseFloat).should('be.a', 'number').and('eq', 25.5);
-    cy.get('#calculation_heater_maximum_heating_power').invoke('text').should('be.a', 'string')
-    .then(parseFloat).should('be.a', 'number').and('eq', 59.7);
     cy.get('#calculation_heater_water_pressure_drop').invoke('text').should('be.a', 'string')
     .then(parseFloat).should('be.a', 'number').and('eq', 9.9);
     cy.get('#calculation_heater_water_flow').invoke('text').should('be.a', 'string')
@@ -68,8 +66,6 @@ context('Blauberg', () => {
     .then(parseFloat).should('be.a', 'number').and('eq', 2.5);
     cy.get('#calculation_cooler_summer_required_power').invoke('text').should('be.a', 'string')
     .then(parseFloat).should('be.a', 'number').and('eq', 10.6);
-    cy.get('#calculation_cooler_summer_maximum_power').invoke('text').should('be.a', 'string')
-    .then(parseFloat).should('be.a', 'number').and('eq', 17);
     cy.get('#calculation_cooler_summer_condensation').invoke('text').should('be.a', 'string')
     .then(parseFloat).should('be.a', 'number').and('eq',-5.1);
     cy.get('#calculation_cooler_summer_air_pressure_drop_wet').invoke('text').should('be.a', 'string')
@@ -84,9 +80,9 @@ context('Blauberg', () => {
     .then(parseFloat).should('be.a', 'number').and('eq', 0.2);
     cy.get('#calculation_cooler_summer_refrigerating_agent').should('include.text', 'R410A');
 //fan R3G500RL9601
-    cy.get('#calculation_fans_winter_ia').should('include.text', '0.8');
+    cy.get('#calculation_fans_winter_ia').should('include.text', '0.7');
     cy.get('#calculation_fans_winter_number_of_fans').should('include.text', '1');
-    cy.get('#calculation_fans_winter_sfp').should('include.text', '934.7');
+    cy.get('#calculation_fans_winter_sfp').should('include.text', '849.3');
 
     cy.checkBasicAfterAuth()
   

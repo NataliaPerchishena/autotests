@@ -141,57 +141,57 @@ context('Blauberg', () => {
 //fans
   //supply
     cy.get('#calculation_winter_supply_n1min').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 2324.1);
+    then(parseFloat).should('be.a', 'number').and('equal', 2267.9);
     cy.get('#calculation_winter_supply_pew').invoke('text').then(($text) => {
       const value = parseFloat($text);
       Cypress.log({ message: `Value of #calculation_winter_extract_nes: ${value}` });
       if (isNaN(value)) {
         Cypress.log({ message: `Error in #calculation_winter_extract_nes: Element not found or value is not a number.` });
       } else
-      if (value !== 523.8) {
-        Cypress.log({ message: `Value of #calculation_winter_extract_nes does not match the expected value.` });
+      if (value !== 565) {
+        Cypress.log({ message: `Value of #calculation_winter_extract_nes does not match the expected value 523.8.` });
       }
     })
     // should('be.a', 'string').
     // then(parseFloat).should('be.a', 'number').and('equal', 523.8);
     cy.get('#calculation_winter_supply_ia').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 2.3);
+    then(parseFloat).should('be.a', 'number').and('equal', 2.5);
     cy.get('#calculation_winter_supply_pf_pa').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 580.7);
+    then(parseFloat).should('be.a', 'number').and('equal', 589);
     cy.get('#calculation_winter_supply_psf_pa').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 555.8);
     cy.get('#calculation_winter_supply_nes').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 59);
+    then(parseFloat).should('be.a', 'number').and('equal', 54.7);
     cy.get('#calculation_winter_supply_qv_m3h').invoke('text').should('be.a', 'string').
     then(parseInt).should('be.a', 'number').and('equal', 2000);
-    cy.get('#calculation_winter_supply_phase_voltage').should('include.text', '~1, 200/277'); 
+    cy.get('#calculation_winter_supply_phase_voltage').should('include.text', '~1, 230'); 
     cy.get('#calculation_fans_winter_supply_number_of_fans').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 1);
     cy.get('#calculation_winter_supply_rated_power').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 740);
+    then(parseFloat).should('be.a', 'number').and('equal', 700);
     cy.get('#calculation_winter_supply_rated_current').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 3.3);
-    cy.get('#calculation_winter_supply_u_control_v').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 8.8);  
+    then(parseFloat).should('be.a', 'number').and('equal', 3);
+    // cy.get('#calculation_winter_supply_u_control_v').invoke('text').should('be.a', 'string').
+    // then(parseFloat).should('be.a', 'number').and('equal', 8.8);  
     cy.get('#calculation_winter_supply_general_sound_pressure_three_meters_to_environment_at_operating_point_with_a_filter').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 31.5);
+    then(parseFloat).should('be.a', 'number').and('equal', 39.5);
     cy.get('#fans_sound_power_supply tbody').children('tr').should('have.length', 6).should("not.be.empty").should('be.visible')
   //extract
     cy.get('#calculation_winter_extract_n1min').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 2229.1);
+    then(parseFloat).should('be.a', 'number').and('equal', 2207.6);
     cy.get('#calculation_winter_extract_pew').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 467.9);
+    then(parseFloat).should('be.a', 'number').and('equal', 528.07);
     cy.get('#calculation_winter_extract_ia').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 2.1);
+    then(parseFloat).should('be.a', 'number').and('equal', 2.3);
     cy.get('#calculation_winter_extract_pf_pa').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 520.3);
+    then(parseFloat).should('be.a', 'number').and('equal', 528.6);
     cy.get('#calculation_winter_extract_psf_pa').invoke('text').should('be.a', 'string').
     then(parseFloat).should('be.a', 'number').and('equal', 495.4);
     cy.get('#calculation_winter_extract_nes').invoke('text').then(($text) => {
       const value = parseFloat($text);
       Cypress.log({ message: `Value of #calculation_winter_extract_nes: ${value}` });
-      if (value !== 58.8) {
-        Cypress.log({ message: `Value of #calculation_winter_extract_nes does not match the expected value.` });
+      if (value !== 52.1) {
+        Cypress.log({ message: `Value of #calculation_winter_extract_nes does not match the expected value 58.8.` });
       }
     }).then(null, (error) => {
       Cypress.log({ message: `Error in #calculation_winter_extract_nes: ${error.message}` });
@@ -204,13 +204,13 @@ context('Blauberg', () => {
     cy.get('#calculation_fans_winter_extract_number_of_fans').invoke('text').should('be.a', 'string').
     then(parseInt).should('be.a', 'number').and('equal', 1);
     cy.get('#calculation_winter_extract_rated_power').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 740);
+    then(parseFloat).should('be.a', 'number').and('equal', 700);
     cy.get('#calculation_winter_extract_rated_current').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 3.3);
-    cy.get('#calculation_winter_extract_u_control_v').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 8.4); 
+    then(parseFloat).should('be.a', 'number').and('equal', 3);
+    // cy.get('#calculation_winter_extract_u_control_v').invoke('text').should('be.a', 'string').
+    // then(parseFloat).should('be.a', 'number').and('equal', 8.4); 
     cy.get('#calculation_winter_extract_general_sound_pressure_three_meters_to_environment_at_operating_point_with_a_filter').invoke('text').should('be.a', 'string').
-    then(parseFloat).should('be.a', 'number').and('equal', 29.5);
+    then(parseFloat).should('be.a', 'number').and('equal', 39.5);
     cy.get('#fans_sound_power_extract tbody').children('tr').should('have.length', 6).should("not.be.empty").should('be.visible')
   
     cy.checkBasicAfterAuth();

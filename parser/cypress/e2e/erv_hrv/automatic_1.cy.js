@@ -1,14 +1,14 @@
 context('Blauberg', () => {
   before(() => {
-    Cypress.session.clearAllSavedSessions();
-    Cypress.session.clearCurrentSessionData()
+ //   Cypress.session.clearAllSavedSessions();
+//    Cypress.session.clearCurrentSessionData()
   })
   beforeEach(() => {
     //Cypress.session.clearAllSavedSessions();
     let Url = Cypress.env('baseUrl');
     
      cy.login(Url);
-     cy.visit(Url + '/nrvu_bvu');
+     cy.visit(Url + '/erv_hrv');
 
   })
 
