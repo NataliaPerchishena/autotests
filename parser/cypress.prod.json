@@ -1,7 +1,6 @@
 {
 	"viewportWidth": 2880,
 	"viewportHeight": 1800,
-	"baseUrl": "https://blaubergselector.com",
 	"chromeWebSecurity": false,
 	"defaultCommandTimeout": 10000,
 	"video": false,
@@ -12,6 +11,7 @@
 		"html": false,
 		"json": true
   	},
-	  "zernUrl": "https://zernselector.ensocore.com",
-	  "User": { "email":"", "password": "" }
+	"baseUrl": "https://blaubergselector.com",
+	"zernUrl": "https://zernselector.ensocore.com",
+	"User": { "email":"", "password": "" }
 }
