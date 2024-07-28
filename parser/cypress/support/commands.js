@@ -70,7 +70,7 @@ Cypress.Commands.add('login', (Url) => {
     cy.get('.modal-login-btn').click({force:true})
      cy.wait(1000)
     
-    let testUser = Cypress.env('prodUser');
+    let testUser = Cypress.env('User');
    cy.get('#form-login').find('input[name=email]').type(testUser.email);
     cy.get('#form-login').find('input[name=password]').type(testUser.password);
     cy.get('#form-login').find('.btn-auth-modal').click({ force: true });

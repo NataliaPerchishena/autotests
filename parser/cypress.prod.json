@@ -11,5 +11,7 @@
 		"overwrite": false,
 		"html": false,
 		"json": true
-  	}
+  	},
+	  "zernUrl": "https://zernselector.ensocore.com",
+	  "User": { "email":"", "password": "" }
 }
