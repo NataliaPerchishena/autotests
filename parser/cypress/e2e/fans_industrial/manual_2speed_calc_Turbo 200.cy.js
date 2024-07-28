@@ -19,7 +19,7 @@ context('Blauberg', () => {
     cy.get('#manual_calculate-submit').click({ force: true })
     cy.wait(1000);
 
-    cy.get('.product-sku').should('includes.text', 'Turbo 200');
+    cy.get('.product-sku').contains('Turbo 200');
     cy.get('#calculation_fans_low_rotation_speed').should('have.text', '1796.8');
     cy.get('#calculation_fans_low_airflow').should('have.text', '571.6');
     cy.get('#calculation_fans_low_static_pressure').should('have.text', '130.7');
