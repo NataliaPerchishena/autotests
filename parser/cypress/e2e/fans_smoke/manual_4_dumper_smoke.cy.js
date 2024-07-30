@@ -3,12 +3,12 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
+      let Url = Cypress.env('baseUrl');
     //  cy.login(Url);
       cy.visit(Url+'/smoke_fan')
   })
 
-  it('manual_selection', () => {
+  it('manual_selection_400x400-2__return_spring_single_louvre', () => {
     cy.get('#manual_selection').click({ force: true })
     cy.get('#ctg_series_smoke_dampers').click({ force: true });
     cy.get('#number_of_flanges').select('2', { force: true });
@@ -36,7 +36,7 @@ context('Blauberg', () => {
     cy.checkBasic();
   })
 
-  it('manual_selection', () => {
+  it('manual_selection_700x800-1_two_position_multi_louvre_actuator', () => {
     cy.get('#manual_selection').click({ force: true })
     cy.get('#ctg_series_smoke_dampers').click({ force: true });
     cy.get('#number_of_flanges').select('1', { force: true });

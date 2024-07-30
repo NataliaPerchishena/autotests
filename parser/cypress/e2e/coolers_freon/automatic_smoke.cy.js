@@ -3,7 +3,7 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
+      let Url = Cypress.env('baseUrl');
     //  cy.login(Url);
       cy.visit(Url+'/cooler_freon')
   })
@@ -29,9 +29,9 @@ context('Blauberg', () => {
     cy.get('#winter_condensation_temperature').clear().type('40');
     cy.get('#winter_subcool').clear().type('2.7');
     
-    cy.get('#automatic_calculate-submit').click({ force: true });
-    cy.wait(1000);
-    cy.get('[data-cy=calculations]').should('be.visible');
+    cy.get('#automatic_calculate-submit').click({ force: true }).
+    //cy.wait(1000);
+    get('[data-cy=calculations]').should('be.visible');
     cy.get('[data-cy=dimensions]').should('be.visible');
 
     cy.checkBasic();

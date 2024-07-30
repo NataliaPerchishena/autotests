@@ -4,7 +4,7 @@ context('Blauberg', () => {
   });
 
   beforeEach(() => {
-    let Url = Cypress.env('baubUrl');
+    let Url = Cypress.env('baseUrl');
     cy.visit(Url + '/heater_water');
   });
 

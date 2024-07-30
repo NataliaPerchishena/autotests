@@ -3,7 +3,7 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
+      let Url = Cypress.env('baseUrl');
     //  cy.login(Url);
       cy.visit(Url+'/smoke_fan')
   })
@@ -25,10 +25,11 @@ context('Blauberg', () => {
     cy.get('.selector-dimensions').contains('width', { matchCase: false }).next().next().should('contain', '400');
     
 
-    cy.get('[data-cy=description]').should('be.visible');
-    cy.get('[data-cy=save_as]').first().click().get('#modal-auth').should('be.visible')
-    cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
-    cy.wait(1000)
-    cy.get('embed').should('be.visible')
+    // cy.get('[data-cy=description]').should('be.visible');
+    // cy.get('[data-cy=save_as]').first().click().get('#modal-auth').should('be.visible')
+    // cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
+    // cy.wait(1000)
+    // cy.get('embed').should('be.visible')
+    cy.checkBasic();
   })
 })

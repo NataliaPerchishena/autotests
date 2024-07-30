@@ -3,9 +3,7 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
-    //  cy.login(Url);
-      cy.visit(Url+'/heater_water')
+      cy.visit('https://blaubergselector.com/heater_water')
   })
 
   it('calculate_button', () => {

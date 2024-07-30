@@ -3,9 +3,9 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
+      let Url = Cypress.env('baseUrl');
     //  cy.login(Url);
-      cy.visit(Url+'/heater_electric')
+      cy.visit(Url+'/heater_water')
   })
 
   it('automatic_selection', () => {

@@ -3,7 +3,7 @@ context('Blauberg', () => {
     Cypress.session.clearAllSavedSessions();
   })
     beforeEach(() => {
-      let Url = Cypress.env('baubUrl');
+      let Url = Cypress.env('baseUrl');
    //   cy.login(Url);
       cy.visit(Url+'/fan')
      
