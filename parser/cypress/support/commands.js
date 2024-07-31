@@ -95,101 +95,6 @@ Cypress.Commands.add('checkBasicAfterAuth', () => {
     cy.checkPdf();
 })
 
-Cypress.Commands.add('checkReportErrorLog', (elements) => {
-    // Перевіряємо значення елементів, які містять 'calculation' в назві і є числом
-    Object.keys(elements).forEach((elementId) => {
-        if (!isNaN(elements[elementId]) && elementId.includes('calculation') && !elementId.includes('//')) {
-          cy.get(`${elementId}`).invoke('text').then(($text) => {
-            const value = parseFloat($text);
-            const expectedValue = parseFloat(elements[elementId]);
-
-            Cypress.log({
-              name: 'Value check',
-              message: `Checking value of #calculation_${elementId}. Expected: ${expectedValue}. Actual: ${value}`,
-              consoleProps: () => {
-                return {
-                  'Element ID': elementId,
-                  'Expected value': expectedValue,
-                  'Actual value': value
-                }
-              }
-            });
-
-            if (isNaN(value)) {
-              Cypress.log({
-                name: '**Error**',
-                message: `Element not found or value is not a number in #calculation_${elementId}`,
-                consoleProps: () => {
-                  return {
-                    'Element ID': elementId
-                  }
-                }
-              });
-            } else if (value !== expectedValue) {
-
-              Cypress.log({
-                name: 'Error',
-                message: `**Value of ${elementId} (${value}) does not match the expected value (${expectedValue}).**`,
-                consoleProps: () => {
-                  return {
-                    'Element ID': elementId,
-                    'Expected value': expectedValue,
-                    'Actual value': value,
-                  }
-                }
-              });
-            }
-          })
-        }
-        // Перевіряємо значення елементів, які містять 'calculation' в назві і НЕ є числом
-        else if (elementId.includes('calculation') && isNaN(elements[elementId]) && !elementId.includes('//')) {
-          cy.get(`${elementId}`).invoke('text').then(($text) => {
-            const value = ($text);
-            const expectedValue = (elements[elementId]);
-
-            Cypress.log({
-              name: 'Value check',
-              message: `Checking value of ${elementId}. Expected: ${expectedValue}. Actual: ${value}`,
-              consoleProps: () => {
-                return {
-                  'Element ID': elementId,
-                  'Expected value': expectedValue,
-                  'Actual value': value
-                }
-              }
-            });
-
-            if (!isNaN(value)) {
-              Cypress.log({
-                name: '**Error**',
-                message: `Element not found or value is a number in ${elementId}`,
-                consoleProps: () => {
-                  return {
-                    'Element ID': elementId
-                  }
-                }
-              });
-            } else if (!$text.includes(expectedValue)) {
-
-              Cypress.log({
-                name: 'Error',
-                message: `**Value of ${elementId} (${value}) does not match the expected value (${expectedValue}).**`,
-                consoleProps: () => {
-                  return {
-                    'Element ID': elementId,
-                    'Expected value': expectedValue,
-                    'Actual value': value,
-                  }
-                }
-              });
-            }
-
-          });
-        }
-    });
-
-})
-
 Cypress.Commands.add('fillForm', (elements) => {
  // Заповнюємо поля даними з файлу, які не містять 'calculation', ''// в назві, і є числом
  Object.keys(elements).forEach((elementId) => {
@@ -257,4 +162,99 @@ Cypress.Commands.add('checkReportErrorFail', (elements) => {
             })
         }
     })
+})
+
+Cypress.Commands.add('checkReportErrorLog', (elements) => {
+  // Перевіряємо значення елементів, які містять 'calculation' в назві і є числом
+  Object.keys(elements).forEach((elementId) => {
+      if (!isNaN(elements[elementId]) && elementId.includes('calculation') && !elementId.includes('//')) {
+        cy.get(`${elementId}`).invoke('text').then(($text) => {
+          const value = parseFloat($text);
+          const expectedValue = parseFloat(elements[elementId]);
+
+          Cypress.log({
+            name: 'Value check',
+            message: `Checking value of #calculation_${elementId}. Expected: ${expectedValue}. Actual: ${value}`,
+            consoleProps: () => {
+              return {
+                'Element ID': elementId,
+                'Expected value': expectedValue,
+                'Actual value': value
+              }
+            }
+          });
+
+          if (isNaN(value)) {
+            Cypress.log({
+              name: '**Error**',
+              message: `Element not found or value is not a number in #calculation_${elementId}`,
+              consoleProps: () => {
+                return {
+                  'Element ID': elementId
+                }
+              }
+            });
+          } else if (value !== expectedValue) {
+
+            Cypress.log({
+              name: 'Error',
+              message: `**Value of ${elementId} (${value}) does not match the expected value (${expectedValue}).**`,
+              consoleProps: () => {
+                return {
+                  'Element ID': elementId,
+                  'Expected value': expectedValue,
+                  'Actual value': value,
+                }
+              }
+            });
+          }
+        })
+      }
+      // Перевіряємо значення елементів, які містять 'calculation' в назві і НЕ є числом
+      else if (elementId.includes('calculation') && isNaN(elements[elementId]) && !elementId.includes('//')) {
+        cy.get(`${elementId}`).invoke('text').then(($text) => {
+          const value = ($text);
+          const expectedValue = (elements[elementId]);
+
+          Cypress.log({
+            name: 'Value check',
+            message: `Checking value of ${elementId}. Expected: ${expectedValue}. Actual: ${value}`,
+            consoleProps: () => {
+              return {
+                'Element ID': elementId,
+                'Expected value': expectedValue,
+                'Actual value': value
+              }
+            }
+          });
+
+          if (!isNaN(value)) {
+            Cypress.log({
+              name: '**Error**',
+              message: `Element not found or value is a number in ${elementId}`,
+              consoleProps: () => {
+                return {
+                  'Element ID': elementId
+                }
+              }
+            });
+          } else if (!$text.includes(expectedValue)) {
+
+            Cypress.log({
+              name: 'Error',
+              message: `**Value of ${elementId} (${value}) does not match the expected value (${expectedValue}).**`,
+              consoleProps: () => {
+                return {
+                  'Element ID': elementId,
+                  'Expected value': expectedValue,
+                  'Actual value': value,
+                }
+              }
+            });
+          }
+
+        });
+      }
+  });
+
 })

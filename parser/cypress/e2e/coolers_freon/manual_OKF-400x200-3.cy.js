@@ -15,7 +15,7 @@ context('Blauberg', () => {
 
           // cy.get('#seasons').select(elements.seasons, { force: true });
       
-          // // Заповнюємо поля даними з файлу, які не містять 'calculation' в назві, не є модель, не є mode
+          // // We fill the fields with data from a file that does not contain 'calculation' in the name, there is no model, there is no mode
           // Object.keys(elements).forEach((elementId) => {
           //   if (!elementId.includes('calculation') && elementId !== 'model'  && elementId !== 'seasons') {
           //     cy.get(`#${elementId}`).clear().type(elements[elementId]);
@@ -39,7 +39,7 @@ context('Blauberg', () => {
                 }
               })
 
-            // // Перевіряємо значення елементів, які містять 'calculation' в назві
+            // // We check the values ​​of elements that contain 'calculation' in the name
             // Object.keys(elements).forEach((elementId) => {
             //   if (elementId.includes('calculation')) {
             //     cy.get(`#${elementId}`).invoke('text').then(($text) => {
@@ -56,6 +56,7 @@ context('Blauberg', () => {
             // });
 
             cy.checkReportErrorFail(elements)
+            
           });
           cy.checkBasic();
         });
