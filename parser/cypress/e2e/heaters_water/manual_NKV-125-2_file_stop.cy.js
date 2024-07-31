@@ -9,7 +9,7 @@ context('Blauberg', () => {
   });
 
   it('calculate_button', () => {
-    cy.fixture('heater_water.json').then((elements) => {
+    cy.fixture('heater_water_NKV-125-2.json').then((elements) => {
       cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
   
       // Заповнюємо поля даними з файлу, які не містять 'calculation' в назві

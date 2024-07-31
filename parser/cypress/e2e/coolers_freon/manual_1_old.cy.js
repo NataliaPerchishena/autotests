@@ -21,10 +21,10 @@ context('Blauberg', () => {
     cy.get('#winter_off_temperature').clear().type('10');     
      
     cy.get('#manual_calculate-submit').click({ force: true });
-  //  cy.wait(1000);
+    cy.wait(1000);
 
     cy.url().then(($url) => {
-      if ($url.includes('blaubergselector')) {
+      if ($url.includes('blauberg')) {
         cy.get('.product-title').contains('KFK 40x20-3'); 
      }
       else
