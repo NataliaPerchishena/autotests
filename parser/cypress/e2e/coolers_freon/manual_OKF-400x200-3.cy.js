@@ -13,17 +13,19 @@ context('Blauberg', () => {
         cy.fixture('cooler_freon_OKF-400x200-3.json').then((elements) => {
           cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
 
-          cy.get('#seasons').select(elements.seasons, { force: true });
+          // cy.get('#seasons').select(elements.seasons, { force: true });
       
-          // Заповнюємо поля даними з файлу, які не містять 'calculation' в назві, не є модель, не є mode
-          Object.keys(elements).forEach((elementId) => {
-            if (!elementId.includes('calculation') && elementId !== 'model'  && elementId !== 'seasons') {
-              cy.get(`#${elementId}`).clear().type(elements[elementId]);
-            }
-          });
+          // // Заповнюємо поля даними з файлу, які не містять 'calculation' в назві, не є модель, не є mode
+          // Object.keys(elements).forEach((elementId) => {
+          //   if (!elementId.includes('calculation') && elementId !== 'model'  && elementId !== 'seasons') {
+          //     cy.get(`#${elementId}`).clear().type(elements[elementId]);
+          //   }
+          // });
       
-          cy.get('#model').select(elements.model, { force: true });
+          // cy.get('#model').select(elements.model, { force: true });
       
+          cy.fillForm(elements)
+          
           cy.get('#manual_calculate-submit').click({ force: true }).then(() => {
             cy.wait(1000);
 
@@ -37,22 +39,25 @@ context('Blauberg', () => {
                 }
               })
 
-            // Перевіряємо значення елементів, які містять 'calculation' в назві
-            Object.keys(elements).forEach((elementId) => {
-              if (elementId.includes('calculation')) {
-                cy.get(`#${elementId}`).invoke('text').then(($text) => {
-                  const value = parseFloat($text);
-                  const expectedValue = parseFloat(elements[elementId]);
+            // // Перевіряємо значення елементів, які містять 'calculation' в назві
+            // Object.keys(elements).forEach((elementId) => {
+            //   if (elementId.includes('calculation')) {
+            //     cy.get(`#${elementId}`).invoke('text').then(($text) => {
+            //       const value = parseFloat($text);
+            //       const expectedValue = parseFloat(elements[elementId]);
       
-                  if (isNaN(value)) {
-                    throw new Error(`Element not found or value is not a number in #${elementId}`);
-                  } else if (value !== expectedValue) {
-                    throw new Error(`Value of #${elementId} (${value}) does not match the expected value (${expectedValue}).`);
-                  }
-                });
-              }
-            });
+            //       if (isNaN(value)) {
+            //         throw new Error(`Element not found or value is not a number in #${elementId}`);
+            //       } else if (value !== expectedValue) {
+            //         throw new Error(`Value of #${elementId} (${value}) does not match the expected value (${expectedValue}).`);
+            //       }
+            //     });
+            //   }
+            // });
+
+            cy.checkReportErrorFail(elements)
           });
+          cy.checkBasic();
         });
       });
       });
