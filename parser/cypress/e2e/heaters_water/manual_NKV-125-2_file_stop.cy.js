@@ -14,8 +14,6 @@ context('Blauberg', () => {
   
       cy.fillForm(elements)
   
-      cy.get('#model').select(elements.model, { force: true });
-  
       cy.get('#manual_calculate-submit').click({ force: true }).then(() => {
         //cy.wait(1000);
   
