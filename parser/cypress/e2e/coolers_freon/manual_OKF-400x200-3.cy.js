@@ -14,14 +14,12 @@ context('Blauberg', () => {
           cy.contains('Manual selection').should('not.be.disabled').click({ force: true });
 
           // cy.get('#seasons').select(elements.seasons, { force: true });
-      
           // // We fill the fields with data from a file that does not contain 'calculation' in the name, there is no model, there is no mode
           // Object.keys(elements).forEach((elementId) => {
           //   if (!elementId.includes('calculation') && elementId !== 'model'  && elementId !== 'seasons') {
-          //     cy.get(`#${elementId}`).clear().type(elements[elementId]);
+          //     cy.get(`${elementId}`).clear().type(elements[elementId]);
           //   }
           // });
-      
           // cy.get('#model').select(elements.model, { force: true });
       
           cy.fillForm(elements)
@@ -42,10 +40,9 @@ context('Blauberg', () => {
             // // We check the values ​​of elements that contain 'calculation' in the name
             // Object.keys(elements).forEach((elementId) => {
             //   if (elementId.includes('calculation')) {
-            //     cy.get(`#${elementId}`).invoke('text').then(($text) => {
+            //     cy.get(`${elementId}`).invoke('text').then(($text) => {
             //       const value = parseFloat($text);
-            //       const expectedValue = parseFloat(elements[elementId]);
-      
+            //       const expectedValue = parseFloat(elements[elementId]);     
             //       if (isNaN(value)) {
             //         throw new Error(`Element not found or value is not a number in #${elementId}`);
             //       } else if (value !== expectedValue) {
@@ -56,7 +53,7 @@ context('Blauberg', () => {
             // });
 
             cy.checkReportErrorFail(elements)
-            
+
           });
           cy.checkBasic();
         });
