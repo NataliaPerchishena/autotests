@@ -19,6 +19,7 @@ context('Blauberg', () => {
        cy.checkReportErrorLog(elements)
        
       });
+      cy.checkBasic();
     });
   });
   })
