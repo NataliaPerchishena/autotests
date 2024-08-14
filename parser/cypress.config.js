@@ -16,7 +16,6 @@ module.exports = {
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-  //baseUrl: 'https://blaubergselector.com',
-   baseUrl: 'https://blaubergselector.ensocore.com',
+
   }
 }
