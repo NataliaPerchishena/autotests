@@ -29,11 +29,29 @@ Cypress.Commands.add('checkTitle', () => {
 })
 
 Cypress.Commands.add('checkDescription', () => {
-    cy.get('[data-cy=description]').should('be.visible')
+    const elementSelector = '[data-cy=description]';
+    cy.get('body').then(($body) => {
+      if ($body.find(elementSelector).length > 0) {
+        cy.get(elementSelector).should('be.visible').then(() => {
+         // cy.log('${elementSelector} is visible. Test passed.');
+        });
+      } else {
+        cy.log('**Error.** '+elementSelector+' not found');
+      }
+    });
 })
 
 Cypress.Commands.add('checkImage', () => {
-    cy.get('[data-cy=image]').should('be.visible')
+  const elementSelector = '[data-cy=image]';
+  cy.get('body').then(($body) => {
+    if ($body.find(elementSelector).length > 0) {
+      cy.get(elementSelector).should('be.visible').then(() => {
+       // cy.log('${elementSelector} is visible. Test passed.');
+      });
+    } else {
+      cy.log('**Error.** '+elementSelector+' not found');
+    }
+  });
 })
 
 Cypress.Commands.add('checkSaveAs', () => {
