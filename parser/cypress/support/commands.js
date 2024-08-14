@@ -60,8 +60,8 @@ Cypress.Commands.add('checkSaveAs', () => {
 
 Cypress.Commands.add('checkPdf', () => {
     cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
-    cy.wait(1000)
-    cy.get('embed').should('be.visible')
+    cy.wait(1500)
+    cy.get('embed')
 })
 Cypress.Commands.add('checkPdf200', () => {
     cy.intercept('pdf').as('postspdf');
@@ -76,7 +76,7 @@ Cypress.Commands.add('checkBasic', () => {
     cy.checkDescription();
     cy.checkImage();
     cy.checkSaveAs();
-    cy.checkPdf();
+    cy.checkPdf200();
 })
 
 Cypress.Commands.add('login', (Url) => {

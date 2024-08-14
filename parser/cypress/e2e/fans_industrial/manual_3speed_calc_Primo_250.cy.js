@@ -40,9 +40,9 @@ cy.get('#calculation_fans_speed_1_total_efficiency').should('have.text', '17.8')
 cy.get('#calculation_fans_speed_2_total_efficiency').should('have.text', '29.9');
 cy.get('#calculation_fans_speed_3_total_efficiency').should('have.text', '36.8');
 
-cy.get('#calculation_fans_speed_1_specific_fan_power').should('have.text', '0.8');
-cy.get('#calculation_fans_speed_2_specific_fan_power').should('have.text', '0.7');
-cy.get('#calculation_fans_speed_3_specific_fan_power').should('have.text', '0.7');
+cy.get('#calculation_fans_speed_1_sfp_e').should('have.text', '0.8');
+cy.get('#calculation_fans_speed_2_sfp_e').should('have.text', '0.7');
+cy.get('#calculation_fans_speed_3_sfp_e').should('have.text', '0.7');
 
 cy.get('#calculation_fans_speed_1_network_frequency').should('have.text', '50');
 cy.get('#calculation_fans_speed_2_network_frequency').should('have.text', '50');

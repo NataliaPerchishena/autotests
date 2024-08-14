@@ -25,7 +25,7 @@ context('Blauberg', () => {
     cy.get('#calculation_fans_low_static_pressure').should('have.text', '130.7');
     cy.get('#calculation_fans_low_static_efficiency').should('have.text', '29.5');
     cy.get('#calculation_fans_low_total_efficiency').should('have.text', '33');
-    cy.get('#calculation_fans_low_specific_fan_power').should('have.text', '0.4');
+    cy.get('#calculation_fans_low_sfp_e').should('have.text', '0.4');
     cy.get('#calculation_fans_low_network_frequency').should('have.text', '50');
     cy.get('#calculation_fans_low_phases').should('have.text', '1');
     cy.get('#calculation_fans_low_voltage').should('have.text', '220-240');
@@ -36,7 +36,7 @@ context('Blauberg', () => {
     cy.get('#calculation_fans_high_static_pressure').should('have.text', '169.2');
     cy.get('#calculation_fans_high_static_efficiency').should('have.text', '30');
     cy.get('#calculation_fans_high_total_efficiency').should('have.text', '33.6');
-    cy.get('#calculation_fans_high_specific_fan_power').should('have.text', '0.6');
+    cy.get('#calculation_fans_high_sfp_e').should('have.text', '0.6');
     cy.get('#calculation_fans_high_network_frequency').should('have.text', '50');
     cy.get('#calculation_fans_high_phases').should('have.text', '1');
     cy.get('#calculation_fans_high_voltage').should('have.text', '220-240');

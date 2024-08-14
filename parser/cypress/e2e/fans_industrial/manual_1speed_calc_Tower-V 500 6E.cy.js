@@ -26,7 +26,7 @@ context('Blauberg', () => {
     cy.get('#calculation_fans_at_operating_point_static_pressure').should('have.text', '229.2');
     cy.get('#calculation_fans_at_operating_point_static_efficiency').should('have.text', '35.9');
     cy.get('#calculation_fans_at_operating_point_total_efficiency').should('have.text', '36.8');
-    cy.get('#calculation_fans_at_operating_point_specific_fan_power').should('have.text', '0.6');
+    cy.get('#calculation_fans_at_operating_point_sfp_e').should('have.text', '0.6');
     cy.get('#calculation_fans_at_operating_point_network_frequency').should('have.text', '50');
     cy.get('#calculation_fans_at_operating_point_phases').should('have.text', '1');
     cy.get('#calculation_fans_at_operating_point_voltage').should('have.text', '220-240');

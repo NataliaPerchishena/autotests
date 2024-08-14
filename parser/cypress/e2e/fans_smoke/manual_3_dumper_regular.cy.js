@@ -23,13 +23,8 @@ context('Blauberg', () => {
     cy.get('.selector-calculations').contains('Number of flanges').next().should('contain', '2');
     cy.get('.selector-calculations').contains('Actuator type').next().should('contain', 'ZERN with return spring and thermoelectric breaker', { matchCase: false });
     cy.get('.selector-dimensions').contains('width', { matchCase: false }).next().next().should('contain', '400');
-    
+  
+    cy.checkBasic(); 
 
-    // cy.get('[data-cy=description]').should('be.visible');
-    // cy.get('[data-cy=save_as]').first().click().get('#modal-auth').should('be.visible')
-    // cy.get('[data-cy=pdf]').first().invoke('attr', 'target', '_self').click({ force: true })
-    // cy.wait(1000)
-    // cy.get('embed').should('be.visible')
-    cy.checkBasic();
   })
 })
