@@ -73,7 +73,7 @@ Cypress.Commands.add('checkPdf200', () => {
 Cypress.Commands.add('checkBasic', () => {
 
     cy.checkTitle();
-    // cy.checkDescription();
+    cy.checkDescription();
     cy.checkImage();
     cy.checkSaveAs();
     cy.checkPdf();
